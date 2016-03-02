@@ -27,3 +27,12 @@ nsdictionary
 timeout
 os
 totp
+subclasses
+thread-related
+read-only
+callbacks
+alloc
+thread-safe
+readonly
+var
+callback
