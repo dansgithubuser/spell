@@ -2,3 +2,12 @@ li
 ul
 rel
 href
+img
+src
+div
+br
+trow
+thead
+td
+tbody
+tr

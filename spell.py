@@ -15,7 +15,8 @@ Additional "ignore groups" may be added as options.
 The following ones are provided:
 - e (less common English)
 - t (technical)
-- html''', formatter_class=argparse.RawTextHelpFormatter)
+- html
+- css''', formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument('file', help='file to spell check')
 parser.add_argument('ignore_group', nargs='*', help='an ignore group to use')
 args=parser.parse_args()

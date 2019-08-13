@@ -52,3 +52,4 @@ linux
 macos
 sega
 buildbot
+endif

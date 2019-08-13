@@ -1,0 +1,9 @@
+font-family
+arial
+line-height
+px
+margin-top
+border-bottom
+lightgray
+border-collapse
+page-break-after
