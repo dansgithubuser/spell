@@ -45,7 +45,7 @@ with open(os.path.join(home, 'word_list.txt')) as word_list:
 	words=set(word_list.read().split())
 
 ignores=set()
-for ignore_group in args.ignore_group+['l']:
+for ignore_group in args.ignore_group:
 	with open(os.path.join(home, 'ignore', ignore_group+'.txt')) as ignore_list:
 		ignores.update(ignore_list.read().split())
 
