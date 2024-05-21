@@ -82,13 +82,17 @@ with open(args.file) as file:
 					i=input()
 					if i=='?' or i=='':
 						print('Enter , to continue reading through the file.')
+						print('Enter an ignore group name to add the word to that ignore group (and also start ignoring it in this run).')
+						print('Enter ig? to print out all ignore groups.')
 						print('Enter . to quit, updating ignore groups.')
 						print('Enter .. to quit, updating nothing.')
 						print('Enter ?? to print out some context.')
 						print('Enter ??? to debug.')
-						print('Other inputs are interpreted as an ignore group to append the word to.')
 						continue
 					if i==',': break
+					if i=='ig?':
+						for i in os.listdir(os.path.join(home, 'ignore')):
+							print(i[:-4])
 					if i=='.': quit=True; break
 					if i=='..': exit(0)
 					if i=='??': print(line.strip()); print(dirty_word); continue
