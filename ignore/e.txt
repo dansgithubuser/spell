@@ -254,3 +254,9 @@ assignee
 telemetry
 delete
 applications
+scaffolding
+database
+migrations
+clone
+server
+dependencies

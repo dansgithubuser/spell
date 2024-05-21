@@ -101,6 +101,13 @@ with open(args.file) as file:
 		line_number+=1
 
 for ignore_group in new_ignores:
-	with open(os.path.join(home, 'ignore', ignore_group+'.txt'), 'a') as ignore_list:
+	path=os.path.join(home, 'ignore', ignore_group+'.txt')
+	if os.path.exists(path):
+		with open(path, 'r') as f:
+			words=set([line.strip() for line in f.readlines()])
+	else:
+		words=set()
+	with open(path, 'a') as ignore_list:
 		for word in new_ignores[ignore_group]:
+			if word in words: continue
 			ignore_list.write(word+'\n')

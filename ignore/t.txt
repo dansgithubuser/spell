@@ -56,3 +56,8 @@ endif
 cli
 namespace
 env
+repo
+npm
+npx
+sequelize-cli
+postgres
