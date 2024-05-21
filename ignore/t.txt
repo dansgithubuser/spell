@@ -53,3 +53,6 @@ macos
 sega
 buildbot
 endif
+cli
+namespace
+env

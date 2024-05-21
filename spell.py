@@ -8,18 +8,31 @@ def clean(word):
 
 #-----arguments-----#
 import argparse
-parser=argparse.ArgumentParser(description='''a command-line spell checker for domain-specific configuration and usage
+desc = '''\
+a command-line spell checker for domain-specific configuration and usage
+
+case-insensitive
 
 By default, common English words are accepted.
-Additional "ignore groups" may be added as options.
+"ignore groups" may be specified as options.
 The following ones are provided:
-- e (less common English)
+- e (modern English)
 - t (technical)
 - html
-- css''', formatter_class=argparse.RawTextHelpFormatter)
+- css
+By default, e ignore group is enabled. Use
+- none: to disable all ignore groups
+- all: to enable all ignore groups
+'''
+parser=argparse.ArgumentParser(description=desc, formatter_class=argparse.RawTextHelpFormatter)
 parser.add_argument('file', help='file to spell check')
-parser.add_argument('ignore_group', nargs='*', help='an ignore group to use')
+parser.add_argument('ignore_group', nargs='*', help='an ignore group to use', default=['e'])
 args=parser.parse_args()
+
+if args.ignore_group == ['none']:
+	args.ignore_group = []
+if args.ignore_group == ['all']:
+	args.ignore_group = [i[:-4] for i in os.listdir('ignore')]
 
 #-----setup-----#
 home=os.path.split(os.path.realpath(__file__))[0]

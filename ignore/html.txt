@@ -11,3 +11,4 @@ thead
 td
 tbody
 tr
+br
